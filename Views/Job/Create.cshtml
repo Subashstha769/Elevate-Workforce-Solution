@@ -1,0 +1,155 @@
+@model ISMT23CWeb.Models.JobViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<style>
+    
+
+    h2 {
+        color: #333;
+        
+        margin-top: 20px;
+    }
+
+    hr {
+        border: 1px solid #ddd;
+        margin-bottom: 30px;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .col-md-4 {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-weight: bold;
+        color: #555;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="submit"],
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+        
+    }
+
+    input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+    .form-check-label {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        color: #555;
+    }
+
+    .form-check-input {
+        margin-right: 10px;
+    }
+
+    .text-danger {
+        color: #dc3545;
+        font-size: 12px;
+    }
+
+    .back {
+        background-color: #babcbc;
+        padding: 1rem;
+        border-radius: 4px;
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+    }
+    .back:hover
+    {
+        transform: scale(105%);
+        cursor: pointer;
+        transition: 1s;
+    }
+
+    
+
+    @* div a {
+        display: inline-block;
+        margin-top: 20px;
+        font-size: 16px;
+    } *@
+</style>
+
+
+<h2>Create Job</h2>
+<hr />
+<div>
+    <a asp-action="List" class="back"> Go to List</a>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" autocomplete="off" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" autocomplete="off" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Salary" class="control-label"></label>
+                <input asp-for="Salary" class="form-control" autocomplete="off"/>
+                <span asp-validation-for="Salary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

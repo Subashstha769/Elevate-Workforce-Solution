@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ewLogo Solutions</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebLab2024.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        .ewLogo {
+            background-color: #4CAF50;
+            border-radius: 1.5rem 0 1.5rem 0;
+            padding: 8px;
+        }
+
+        .char-eW {
+            color: white;
+
+        }
+
+        .text-soln {
+            color: white;
+
+        }
+
+        .home:hover {
+            transform: scale(106%);
+            transition: 1s;
+
+        }
+
+        .opportunities:hover {
+            transform: scale(106%);
+            transition: 1s;
+
+        }
+        .Login-SignOut{
+            display: flex;
+            gap: 8px;
+        }
+        .Login-SignOut a:hover
+        {
+            transform: scale(105%);
+            box: shadow 4px 4px 2px 2px black;
+        }
+
+
+        #admin
+        {
+            
+            background-color: ;
+            background-color: #4CAF50;
+            border-radius: 4px;
+            padding: 0.5% rem;
+            color: white;
+        }
+        #admin:hover{
+            transition: 1ms;
+        }
+
+        #CreateJob{
+            background-color: ;
+            background-color: #4CAF50;
+            border-radius: 4px;
+            padding: 0.5% rem;
+            color: white;
+
+        }
+        #CreateJob:hover
+        {
+            transform: scale(105%);
+            transition: 1ms;
+            box: shadow 4px 4px 2px 2px black;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav
+            class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-secondary-subtle border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand ewLogo" title="Elevate Workforce Solutions" asp-area="" asp-controller="Home"
+                    asp-action="Index">
+                    <span class="char-eW">eW</span>
+
+                    <span class="text-soln">Solutions</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark home" asp-area="" asp-controller="Home"
+                                asp-action="Index">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark home" asp-area="" asp-controller="Home"
+                                asp-action="About">About Us</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark opportunities" asp-area="" asp-controller="Job"
+                                asp-action="Opportunities">Job Opportunities</a>
+                        </li>
+
+
+
+                    </ul>
+
+                    <div class="Login-SignOut">
+                        <a class="nav-link " title="Create Job" asp-area="" asp-controller="Job"
+                            asp-action="Create" id="CreateJob"> Create Job
+                        </a>
+
+                        <a class="nav-link " title="Admin" asp-area="" asp-controller="User"
+                            asp-action="Login" id="admin">Admin
+                        </a>
+
+                        <a class="nav-link text-dark" title="Sign Out" asp-area="" asp-controller="User"
+                            asp-action="SignOut" id="signOutButton"><i class="fa-solid fa-right-from-bracket fs-4"></i>
+                        </a>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <footer class="border-top footer bg-secondary-subtle text-muted">
+        <div class="container text-center">
+            &copy; CopyRight Elevate Workforce Solutions.All reserved - <a asp-area="" asp-controller="Home"
+                asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Checking if the user is authenticated using ASP.NET authentication status
+            var isAuthenticated = '@User.Identity.IsAuthenticated'.toLowerCase() === 'true';
+
+            // Getting the sign-out button by ID
+            var signOutButton = document.getElementById('signOutButton');
+
+            //Getting the Admin button by ID 
+            var Login = document.getElementById('admin');
+
+            //Getting the Create Job button by ID 
+            var CreateJob = document.getElementById('CreateJob');
+
+            // Initially hide the SignOut button
+            signOutButton.style.display = 'none';
+
+
+            // Show the SignOut button only if the user is authenticated
+            if (isAuthenticated) {
+                CreateJob.style.display = 'inline-block';
+                signOutButton.style.display = 'inline-block'; // or 'block' depending on your layout
+                Login.style.display = 'none';
+            }
+            else
+            {
+                CreateJob.style.display = 'none';
+                Login.style.display = 'inline-block';
+
+            }
+        });
+    </script>
+</body>
+
+</html>

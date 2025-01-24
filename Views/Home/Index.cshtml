@@ -1,0 +1,148 @@
+﻿@model WebLab2024.Models.PersonModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@* <div class="row">
+    <div class="col-md-4 border border-1 border-rounded border-dark p-4 ">
+        <form method="post" asp-action="Details">
+            <div class="form-group">
+                <label class="form-label">First Name:</label>
+                <input class="form-control" asp-for="FirstName" type="text" maxlength="250" />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Last Name:</label>
+                <input class="form-control" asp-for="LastName" type="text" />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Email: </label>
+                <input class="form-control" asp-for="Email" type="email" />
+            </div>
+            <div class="form-group">
+                <label class="form-label">Phone Number:</label>
+                <input class="form-control" asp-for="PhoneNumber" maxlength="10" type="number" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class=" mt-2 btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+</div> *@
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+    }
+
+    .index-header {
+        background: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        text-align: center;
+    }
+
+    .hero {
+        background: url('https://via.placeholder.com/1920x600') no-repeat center center/cover;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        padding: 100px 20px;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .features {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        justify-content: center;
+        background: #f4f4f4;
+    }
+
+    .feature {
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        flex: 1 1 300px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature h3 {
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .cta {
+        text-align: center;
+        padding: 50px 20px;
+        background: #4CAF50;
+        color: white;
+        margin-bottom: 4rem;
+    }
+
+    .cta h2 {
+        font-size: 2.5rem;
+    }
+
+    .cta button {
+        background: white;
+        color: #4CAF50;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+
+    .cta button:hover {
+        background: #f4f4f4;
+    }
+</style>
+
+
+
+<header class="index-header mt-1">
+    <h1>Elevate Workforce Solutions</h1>
+    <p>Your Gateway to Better Employment Opportunities</p>
+</header>
+
+<section class="hero">
+    <h1>Find Your Dream Job Today</h1>
+    <p>Connecting Employers and Job Seekers Across Nepal</p>
+</section>
+
+<section id="features" class="features">
+    <div class="feature">
+        <h3>Easy Job Search</h3>
+        <p>Find jobs that match your skills and location.</p>
+    </div>
+    <div class="feature">
+        <h3>Equal Opportunities</h3>
+        <p>Promoting diversity and inclusion for all job seekers.</p>
+    </div>
+    <div class="feature">
+        <h3>Transparency</h3>
+        <p>Access clear and detailed job descriptions.</p>
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Ready to Elevate Your Career?</h2>
+    <div class="mt-4">
+        <a href="#" class="btn btn-primary btn-lg">Get Started</a>
+    </div>
+</section>

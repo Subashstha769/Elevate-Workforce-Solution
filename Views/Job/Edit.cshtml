@@ -1,0 +1,155 @@
+@model ISMT23CWeb.Models.JobViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<style>
+   
+
+    h2 {
+        
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+    }
+
+    .col-md-4 {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    .form-control:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+    .form-check-label {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
+    .form-check-input {
+        margin-right: 8px;
+    }
+
+    .btn-primary {
+        width: 100%;
+        margin-top: 8px;
+        background-color: #007bff;
+        border: none;
+        padding: 10px 15px;
+        color: #fff;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-size: 14px;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .text-danger {
+        font-size: 12px;
+        color: #dc3545;
+    }
+
+    a {
+        display: inline-block;
+        
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    
+
+    .back {
+        background-color: #babcbc;
+        padding: 1rem;
+        border-radius: 4px;
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+    }
+    .back:hover
+    {
+        
+        cursor: pointer;
+        transition: 1s;
+    }
+</style>
+
+<h2>Edit Job</h2>
+
+<hr />
+<div>
+    <a asp-action="List" class="back"><i class="fa-solid fa-arrow-left"></i>  Back to List</a>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Salary" class="control-label"></label>
+                <input asp-for="Salary" class="form-control" />
+                <span asp-validation-for="Salary" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
