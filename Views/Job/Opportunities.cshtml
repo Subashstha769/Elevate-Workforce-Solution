@@ -6,7 +6,7 @@
 <style>
     h2 {
         color: #333;
-        
+
         margin-bottom: 20px;
     }
 
@@ -86,6 +86,7 @@
         text-decoration: none;
         font-size: 14px;
     }
+
     #applyJob {
         background-color: #4CAF50;
         color: white;
@@ -95,11 +96,10 @@
         cursor: pointer;
         margin-right: 5px;
     }
+
     #applyJob:hover {
         background-color: #45a049;
     }
-
-    
 </style>
 
 
@@ -133,7 +133,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.DisplayOrder)
 
-                    
+
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Title)
@@ -148,9 +148,9 @@
                     @Html.DisplayFor(modelItem => item.Salary)
                 </td>
                 <td>
-                    <button id="applyJob">Apply</button> 
-                    
-                    
+                    <button id="applyJob">Apply</button>
+
+
                 </td>
             </tr>
         }
@@ -169,11 +169,11 @@
 </div>
 
 <script>
-let applyJob = document.getElementById('applyJob');
-applyJob.addEventListener('click', function() {
-    let email = prompt('Please enter your e-mail address');
-    if (email) {
-        alert('You have successfully applied for this job with email: ' + email);
-    }
-});
+    let applyJob = document.getElementById('applyJob');
+    applyJob.addEventListener('click', function () {
+        let email = prompt('Please enter your e-mail address');
+        if (email) {
+            alert('You have successfully applied for this job with email: ' + email);
+        }
+    });
 </script>

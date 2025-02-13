@@ -157,3 +157,4 @@
 /Users/subash/Documents/C#/WebLab2024/obj/Debug/net8.0/WebLab2024.csproj.AssemblyReference.cache
 /Users/subash/Documents/C#/WebLab2024/obj/Debug/net8.0/WebLab2024.csproj.Up2Date
 /Users/subash/Documents/C#/WebLab2024/bin/Debug/net8.0/System.Security.Permissions.dll
+/Users/subash/Documents/C#/WebLab2024/obj/Debug/net8.0/WebLab2024.sourcelink.json

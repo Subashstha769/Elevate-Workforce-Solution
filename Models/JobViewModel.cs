@@ -28,4 +28,5 @@ namespace ISMT23CWeb.Models
 
         public List<JobViewModel> Data { get; set; }
     }
+    
 }
